@@ -9,15 +9,16 @@ pipeline {
         }
         stage('Instalando Dependencias') {
             steps {
-               //bat 'npm install'
-               sh 'npm install'
+               bat 'npm install'
+               //sh 'npm install'
             }
         }        
         stage('Teste') {
             steps {
-               //bat '''set NO_COLOR=1
-                //npm test'''
-                sh 'NO_COLOR=1 npm run cy:run'
+               bat '''set NO_COLOR=1
+npm serverest
+npm cypress open'''
+                //sh 'NO_COLOR=1 npm run cy:run'
             }
         }
     }
