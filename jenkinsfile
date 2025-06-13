@@ -22,7 +22,7 @@ pipeline {
         stage('Teste2') {
             steps {
                 bat '''set NO_COLOR=1
-                npm cypress open'''              
+                npm cy:run'''              
             }
         }
 
