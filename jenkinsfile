@@ -13,12 +13,12 @@ pipeline {
                //sh 'npm install'
             }
         }        
-        stage('Teste') {
-            steps {
-               bat '''set NO_COLOR=1
-                npm start'''                
-            }
-        }
+        //stage('Teste') {
+        //    steps {
+        //       bat '''set NO_COLOR=1
+        //        npm start'''                
+        //    }
+        //}
         stage('Teste2') {
             steps {
                 bat '''set NO_COLOR=1
