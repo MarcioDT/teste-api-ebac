@@ -16,7 +16,7 @@ pipeline {
         stage('Teste') {
             steps {
                bat '''set NO_COLOR=1
-                npm cy:run'''
+                npx cypress run'''
                 //sh 'NO_COLOR=1 npm run cy:run'
             }
         }
