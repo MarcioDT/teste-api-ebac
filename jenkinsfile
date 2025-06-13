@@ -14,8 +14,16 @@ pipeline {
         }        
         stage('Teste') {
             steps {
-               bat '''set NO_COLOR=1
-                npm test'''
+               it('Deve listar usuários cadastrados', () => {
+    cy.request({
+      method: 'GET',
+      url: 'usuarios'
+    }).should((response)=>{
+        expect(response.status).equal(200)
+        expect(response.body).to.have.property('usuarios')
+            
+      }) 
+  });
             }
         }
     }
